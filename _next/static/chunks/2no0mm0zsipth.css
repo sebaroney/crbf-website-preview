@@ -37,3 +37,11 @@ body:has(main > .hero > .hero-copy) .site-nav a:not(.nav-donate) {
     font-size: 1rem;
   }
 }
+
+/* Homepage hero actions */
+main > .hero > .hero-copy > .button-row > .button {
+  font-family: var(--font-cormorant), Georgia, serif;
+  font-size: .9rem;
+  font-weight: 700;
+  letter-spacing: .04em;
+}
