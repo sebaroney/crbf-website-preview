@@ -66,7 +66,8 @@ body:has(main > .hero > .hero-copy) .site-header .brand-name {
 .inner-hero:has(h1.about-page-title) > div:first-child > .eyebrow,
 .impact > .section-heading > .eyebrow,
 .research-section > .section-heading .eyebrow,
-.support-feature > .support-copy > .eyebrow {
+.support-feature > .support-copy > .eyebrow,
+.legacy > .legacy-copy > .eyebrow {
   color: var(--warm-gold);
   font-family: var(--font-cormorant), Georgia, serif;
   font-size: .875rem;
