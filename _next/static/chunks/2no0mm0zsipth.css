@@ -10,9 +10,25 @@ body:has(main > .hero > .hero-copy) .site-nav a:not(.nav-donate) {
   letter-spacing: .04em;
 }
 
+@media (min-width: 901px) {
+  body:has(main > .hero > .hero-copy) .site-nav a {
+    white-space: nowrap;
+  }
+}
+
+@media (min-width: 901px) and (max-width: 1240px) {
+  body:has(main > .hero > .hero-copy) .site-nav {
+    gap: 10px;
+  }
+}
+
 @media (min-width: 901px) and (max-width: 1120px) {
+  body:has(main > .hero > .hero-copy) .site-nav {
+    gap: 8px;
+  }
+
   body:has(main > .hero > .hero-copy) .site-nav a:not(.nav-donate) {
-    font-size: .75rem;
+    font-size: .7rem;
   }
 }
 
