@@ -61,3 +61,12 @@ body:has(main > .hero > .hero-copy) .site-header .brand-name {
     font-size: clamp(3.04rem, 15.2vw, 4.48rem);
   }
 }
+
+/* About CRBF hero label */
+.inner-hero:has(h1.about-page-title) > div:first-child > .eyebrow {
+  color: var(--warm-gold);
+  font-family: var(--font-cormorant), Georgia, serif;
+  font-size: .875rem;
+  font-weight: 700;
+  letter-spacing: .04em;
+}
