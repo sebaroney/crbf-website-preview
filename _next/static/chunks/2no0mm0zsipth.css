@@ -50,3 +50,14 @@ main > .hero > .hero-copy > .button-row > .button {
 body:has(main > .hero > .hero-copy) .site-header .brand-name {
   --brand-name-increase: .0625rem;
 }
+
+/* Our impact hero heading */
+.inner-hero h1.about-page-title {
+  font-size: clamp(3.52rem, 5.6vw, 5.6rem);
+}
+
+@media (max-width: 620px) {
+  .inner-hero h1.about-page-title {
+    font-size: clamp(3.04rem, 15.2vw, 4.48rem);
+  }
+}
