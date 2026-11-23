@@ -70,3 +70,9 @@ body:has(main > .hero > .hero-copy) .site-header .brand-name {
   font-weight: 700;
   letter-spacing: .04em;
 }
+
+/* Homepage research impact label */
+.impact-grid .impact-research-label {
+  max-width: 10rem;
+  text-wrap: balance;
+}
