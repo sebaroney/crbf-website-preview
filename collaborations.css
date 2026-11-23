@@ -102,3 +102,9 @@
 @media (max-width: 375px) {
   .collaboration-slides { grid-auto-columns: 76%; }
 }
+
+.collaboration-mark-sophie img {
+  width: auto;
+  aspect-ratio: 1;
+  clip-path: circle(48%);
+}
