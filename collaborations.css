@@ -303,3 +303,8 @@ main:has(.research-page-title) .donate-cta {
     margin-top: 0;
   }
 }
+
+/* Match the major section headings to the Research page title. */
+main:has(.research-page-title) :is(.content-section, .collaboration-heading) h2 {
+  font-size: var(--crbf-display-size);
+}
