@@ -252,9 +252,13 @@ main .donate-cta p {
   color: var(--charcoal);
 }
 
+blockquote:has(> .quote-attribution) {
+  color: var(--warm-gold);
+}
+
 .quote-attribution {
   margin-top: .85rem;
-  color: var(--charcoal);
+  color: inherit;
   font-family: var(--font-manrope), Arial, sans-serif;
   font-size: .85rem;
   font-style: normal;
