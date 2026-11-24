@@ -113,3 +113,139 @@
 main .research-case strong {
   font-size: calc(clamp(1.75rem, 3vw, 2.5rem) * .81);
 }
+
+/* Research page layout */
+.inner-hero:has(.research-page-title) {
+  grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr);
+  gap: clamp(28px, 6vw, 88px);
+  padding-block: clamp(32px, 6vw, 84px);
+  background: linear-gradient(125deg, #f4efe8, #e9e1d6);
+}
+
+.inner-hero:has(.research-page-title) .inner-hero-image {
+  aspect-ratio: 4 / 3;
+  min-height: 0;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.inner-hero:has(.research-page-title) .eyebrow,
+.research-fellowships > .eyebrow {
+  color: #80663e;
+}
+
+.content-section.narrow.research-case {
+  max-width: 1180px;
+  display: grid;
+  gap: clamp(14px, 2vw, 25px);
+  padding-block: clamp(36px, 6.5vw, 88px);
+}
+
+.research-case > p:not(.eyebrow) {
+  margin: 0;
+  max-width: 63ch;
+}
+
+.research-case > p:has(> strong) {
+  max-width: none;
+  display: grid;
+  align-content: center;
+  padding: clamp(18px, 3vw, 34px);
+  border-left: 2px solid var(--warm-gold);
+  background: #eee8df;
+  border-radius: 0 6px 6px 0;
+}
+
+.research-case strong {
+  color: #685131;
+}
+
+.content-section:has(> .research-portfolio) {
+  padding-block: clamp(36px, 5vw, 64px);
+  border-top: 1px solid var(--line);
+}
+
+.content-section:has(> .research-portfolio) > p:not(.eyebrow) {
+  max-width: 72ch;
+  margin-block: 18px 0;
+}
+
+.research-portfolio {
+  gap: clamp(12px, 2vw, 20px);
+  margin-top: clamp(22px, 3.5vw, 40px);
+  background: transparent;
+  border: 0;
+}
+
+.research-portfolio > article {
+  min-width: 0;
+  padding: clamp(18px, 3vw, 34px);
+  background: #fff;
+  border: 1px solid #ded5c8;
+  border-radius: 6px;
+}
+
+.research-portfolio h3 {
+  margin-bottom: 16px;
+  color: var(--charcoal);
+}
+
+.research-portfolio dl {
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+}
+
+.research-portfolio dl > div + div {
+  margin-top: 10px;
+}
+
+.research-portfolio dd {
+  line-height: 1.45;
+}
+
+.research-fellowships .research-portfolio > article {
+  background: #f1ebe2;
+}
+
+.research-fellowships .research-portfolio article > p {
+  margin: 18px 0 0;
+}
+
+main:has(.research-page-title) .donate-cta {
+  margin-top: clamp(12px, 3vw, 36px);
+  background: #e4d8c5;
+}
+
+main:has(.research-page-title) .donate-cta p {
+  color: var(--charcoal);
+}
+
+.collaboration-controls {
+  flex-wrap: wrap;
+}
+
+@media (min-width: 901px) {
+  .research-case {
+    grid-template-columns: minmax(0, 1fr) minmax(0, .92fr);
+    column-gap: clamp(30px, 7vw, 95px);
+  }
+
+  .research-case > p:not(:has(> strong)) {
+    grid-column: 1;
+  }
+
+  .research-case > p:has(> strong) {
+    grid-column: 2;
+    grid-row: span 2;
+  }
+}
+
+@media (max-width: 900px) {
+  .inner-hero:has(.research-page-title) {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .inner-hero:has(.research-page-title) .inner-hero-image {
+    aspect-ratio: 16 / 9;
+  }
+}
