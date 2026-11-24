@@ -232,6 +232,7 @@ main:has(.research-page-title) .donate-cta {
 
 main:has(.research-page-title) .donate-cta p {
   color: var(--charcoal);
+  font-size: clamp(1.5rem, 2.7vw, 2.75rem);
 }
 
 .collaboration-controls {
