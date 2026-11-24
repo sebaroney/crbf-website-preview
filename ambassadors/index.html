@@ -62,8 +62,8 @@
     }
     .portrait-grid figcaption {
       padding: .95rem .15rem .4rem;
-      color: var(--charcoal);
-      font: 500 var(--crbf-card-title-size)/1.12 var(--font-cormorant), Georgia, serif;
+      color: var(--warm-gold);
+      font: 500 clamp(1.08rem, 1.6vw, 1.42rem)/1.12 var(--font-cormorant), Georgia, serif;
       overflow-wrap: anywhere;
     }
     .ambassador-links { margin-top: clamp(22px, 4vw, 42px); }
@@ -76,6 +76,7 @@
         grid-template-columns: minmax(0, 1fr) minmax(0, 3fr);
         gap: clamp(20px, 4vw, 54px);
       }
+      .ambassador-primary { display: block; }
       .ambassador-group h2 { margin-bottom: 0; }
       .portrait-grid figure { flex-basis: calc((100% - 3 * var(--portrait-gap)) / 4); }
     }
@@ -88,15 +89,13 @@
     <div>
       <h1 id="ambassador-heading">Meet our Ambassadors</h1>
       <nav class="ambassador-nav" aria-label="Ambassador groups">
-        <a href="#ambassadors-0">Foundation ambassadors</a>
         <a href="#ambassadors-1">Ambassadors with lived experience</a>
         <a href="#ambassadors-2">Youth ambassadors</a>
       </nav>
     </div>
   </section>
   <div class="content-section ambassador-content">
-    <section class="ambassador-group" aria-labelledby="ambassadors-0">
-      <h2 id="ambassadors-0">Foundation ambassadors</h2>
+    <section class="ambassador-group ambassador-primary" aria-label="Foundation ambassadors">
       <div class="portrait-grid">
         <figure><img src="/crbf-website-preview/images/ambassadors/jack-maddocks.jpg" alt="" width="176" height="176" loading="lazy" decoding="async"><figcaption>Jack Maddocks</figcaption></figure>
         <figure><img src="/crbf-website-preview/images/ambassadors/paul-roos.jpg" alt="" width="176" height="176" loading="lazy" decoding="async"><figcaption>Paul Roos</figcaption></figure>
@@ -105,7 +104,7 @@
         <figure><img src="/crbf-website-preview/images/ambassadors/thomas-yassmin.jpg" alt="" width="176" height="176" loading="lazy" decoding="async"><figcaption>Thomas Yassmin</figcaption></figure>
         <figure><img src="/crbf-website-preview/images/ambassadors/ben-donaldson.jpg" alt="" width="176" height="176" loading="lazy" decoding="async"><figcaption>Ben Donaldson</figcaption></figure>
         <figure><img src="/crbf-website-preview/images/ambassadors/michael-wipfli.jpg" alt="" width="176" height="176" loading="lazy" decoding="async"><figcaption>Michael Wipfli</figcaption></figure>
-        <figure><img src="/crbf-website-preview/images/ambassadors/melissa-hoyer.jpg" alt="" width="176" height="176" loading="lazy" decoding="async"><figcaption>Melissa Hoyer</figcaption></figure>
+        <figure><img src="/crbf-website-preview/images/ambassadors/melissa-hoyer-headshot.jpg" alt="" width="176" height="176" loading="lazy" decoding="async"><figcaption>Melissa Hoyer</figcaption></figure>
       </div>
     </section>
     <section class="ambassador-group" aria-labelledby="ambassadors-1">
