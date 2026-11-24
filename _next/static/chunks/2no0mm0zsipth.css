@@ -274,3 +274,15 @@ blockquote:has(> .quote-attribution) {
   line-height: 1.5;
   letter-spacing: 0;
 }
+
+/* Give the complete Jack Gibson programme artwork more room on wide screens. */
+@media (min-width: 901px) {
+  .support-feature:has(img[src$="/jack-gibson-support-programme.jpg"]) {
+    grid-template-columns: minmax(0, 1.24fr) minmax(0, .76fr);
+    gap: clamp(30px, 4.5vw, 65px);
+  }
+  .inner-hero.has-image:has(img[src$="/jack-gibson-support-programme.jpg"]) {
+    grid-template-columns: minmax(0, .76fr) minmax(0, 1.24fr);
+    gap: clamp(30px, 4.5vw, 65px);
+  }
+}
