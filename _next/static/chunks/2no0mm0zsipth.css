@@ -185,3 +185,9 @@ main.archive .episode-summary {
     font-size: calc(clamp(2.75rem, 10vw, 4.5rem) * .729);
   }
 }
+
+/* Frame only the photograph from the original Support banner. */
+.inner-hero:has(.support-page-title) .inner-hero-image img {
+  object-view-box: inset(0 45.5% 0 0);
+  object-position: center;
+}
