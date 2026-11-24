@@ -136,7 +136,7 @@ main:has(.research-page-title) .eyebrow {
   color: var(--charcoal);
 }
 
-main:has(.research-page-title) .eyebrow::before {
+main:has(.research-page-title) .eyebrow:not(.inner-hero .eyebrow)::before {
   content: "";
   width: 24px;
   height: 2px;
