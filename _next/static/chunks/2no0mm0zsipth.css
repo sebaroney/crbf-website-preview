@@ -13,7 +13,7 @@ h1, h2, h3, h4, h5, h6,
 }
 
 .eyebrow, .footer-main h2 {
-  font-size: .875rem;
+  font-size: 1.08rem;
   font-weight: 700;
   letter-spacing: .04em;
 }
@@ -68,12 +68,12 @@ h1, h2, h3, h4, h5, h6,
 /* Shared sizes for matching content roles across the site. */
 :root {
   --crbf-display-size: calc(clamp(4.2rem, 7vw, 7.8rem) * .6561);
-  --crbf-section-size: calc(clamp(2.8rem, 4.6vw, 4.7rem) * .81);
+  --crbf-section-size: clamp(2.8rem, 4.6vw, 4.7rem);
   --crbf-lead-size: 1.05rem;
   --crbf-lead-leading: 1.7;
   --crbf-copy-size: 1.02rem;
   --crbf-copy-leading: 1.8;
-  --crbf-card-title-size: 1.62rem;
+  --crbf-card-title-size: 2rem;
   --crbf-card-copy-size: .88rem;
   --crbf-card-copy-leading: 1.7;
 }
