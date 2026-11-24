@@ -286,3 +286,58 @@ blockquote:has(> .quote-attribution) {
     gap: clamp(30px, 4.5vw, 65px);
   }
 }
+
+/* Support page composition */
+main:has(.support-page-title) .inner-hero {
+  background: linear-gradient(130deg, var(--off-white), var(--crbf-panel-tint));
+  gap: clamp(24px, 4.5vw, 62px);
+  padding-block: clamp(32px, 5.5vw, 76px);
+}
+.support-page-title {
+  max-width: 19ch;
+  line-height: 1.05;
+}
+main:has(.support-page-title) .inner-hero > div:first-child > .eyebrow {
+  margin-bottom: 14px;
+}
+main:has(.support-page-title) .inner-hero > div:first-child > p:last-child {
+  margin-top: 20px;
+  max-width: 48ch;
+  line-height: 1.65;
+}
+main:has(.support-page-title) .inner-hero > div:has(> img) {
+  padding: clamp(4px, .75vw, 10px);
+  background: #fff;
+  border: 1px solid var(--crbf-panel-border);
+  box-shadow: var(--crbf-panel-shadow);
+}
+main:has(.support-page-title) .numbered-list {
+  margin-top: clamp(24px, 4vw, 40px);
+}
+main:has(.support-page-title) .numbered-list > div {
+  padding: clamp(20px, 3vw, 32px);
+  border-top: 2px solid var(--warm-gold);
+}
+main:has(.support-page-title) .numbered-list > div::before {
+  margin-bottom: 14px;
+  color: var(--charcoal);
+}
+main:has(.support-page-title) .numbered-list p { margin-bottom: 0; }
+main:has(.support-page-title) .content-section.narrow {
+  width: calc(100% - 48px);
+  max-width: 1132px;
+  margin: 0 auto clamp(32px, 5vw, 64px);
+  padding: clamp(22px, 4vw, 48px);
+  background: var(--crbf-panel-tint);
+  border: 1px solid var(--crbf-panel-border);
+  border-radius: 6px;
+}
+main:has(.support-page-title) .content-section.narrow ul {
+  list-style: none !important;
+  padding-left: 0 !important;
+  gap: 0 !important;
+}
+main:has(.support-page-title) .content-section.narrow li {
+  padding-block: .8rem;
+  border-top: 1px solid var(--crbf-panel-border);
+}
