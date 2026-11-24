@@ -166,7 +166,7 @@ main:has(.research-page-title) .eyebrow:not(.inner-hero .eyebrow)::before {
 
 .research-case strong {
   display: block;
-  color: var(--charcoal);
+  color: var(--warm-gold);
   line-height: 1.15;
 }
 
