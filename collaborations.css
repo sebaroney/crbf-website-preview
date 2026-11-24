@@ -146,8 +146,8 @@ main:has(.research-page-title) .eyebrow:not(.inner-hero .eyebrow)::before {
 .content-section.narrow.research-case {
   max-width: 1180px;
   display: grid;
-  gap: clamp(14px, 2vw, 25px);
-  padding-block: clamp(36px, 6.5vw, 88px);
+  row-gap: clamp(8px, 1.1vw, 14px);
+  padding-block: clamp(28px, 4.5vw, 60px);
 }
 
 .research-case > p:not(.eyebrow) {
@@ -159,7 +159,7 @@ main:has(.research-page-title) .eyebrow:not(.inner-hero .eyebrow)::before {
   max-width: none;
   display: grid;
   align-content: center;
-  padding: clamp(18px, 3vw, 34px);
+  padding: clamp(14px, 2vw, 24px);
   border-left: 2px solid var(--warm-gold);
   background: color-mix(in srgb, var(--warm-gold) 18%, white);
   border-radius: 0 6px 6px 0;
