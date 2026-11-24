@@ -256,6 +256,14 @@ blockquote:has(> .quote-attribution) {
   color: var(--warm-gold);
 }
 
+.legacy blockquote:has(> .quote-attribution) {
+  font-size: calc(clamp(2.7rem, 4.4vw, 4.6rem) * .81);
+}
+
+.content-section blockquote:has(> .quote-attribution) {
+  font-size: calc(clamp(2.3rem, 4vw, 4rem) * .81);
+}
+
 .quote-attribution {
   margin-top: .85rem;
   color: inherit;
