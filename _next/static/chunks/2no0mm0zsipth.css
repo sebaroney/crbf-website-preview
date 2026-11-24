@@ -131,6 +131,7 @@ main.archive .episode-summary {
 @media (max-width: 620px) {
   :root {
     --crbf-display-size: calc(clamp(2.75rem, 10vw, 4.5rem) * .531441);
+    --crbf-card-title-size: 1.3rem;
   }
 }
 
@@ -249,4 +250,15 @@ main .donate-cta {
 
 main .donate-cta p {
   color: var(--charcoal);
+}
+
+.quote-attribution {
+  margin-top: .85rem;
+  color: var(--charcoal);
+  font-family: var(--font-manrope), Arial, sans-serif;
+  font-size: .85rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.5;
+  letter-spacing: 0;
 }
