@@ -7,113 +7,122 @@
   <title>Meet our Ambassadors | Cooper Rice-Brading Foundation</title>
   <link rel="stylesheet" href="/crbf-website-preview/_next/static/chunks/2no0mm0zsipth.css?v=type-system-11" data-precedence="next"/>
   <style>
-    #ambassador-heading {
+    .ambassador-hero {
+      color: var(--off-white);
+      background: var(--charcoal);
+      border-bottom: 3px solid var(--warm-gold);
+      padding: clamp(36px, 6vw, 80px) 24px;
+    }
+    .ambassador-hero > div { max-width: 1132px; margin-inline: auto; }
+    .ambassador-hero h1 {
       font-size: var(--crbf-display-size);
+      line-height: 1.05;
+      letter-spacing: -.04em;
       font-weight: 500;
-      line-height: .98;
-      letter-spacing: -.045em;
-      text-align: center;
-      margin: 0 0 clamp(24px, 4vw, 48px);
+      margin: 0;
     }
-    .portrait-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(min(100%, 225px), 1fr));
-      gap: clamp(20px, 4vw, 44px);
-      text-align: center;
+    .ambassador-nav { display: flex; flex-wrap: wrap; gap: 10px 24px; margin-top: 22px; }
+    .ambassador-nav a {
+      color: var(--off-white);
+      font-size: .875rem;
+      text-decoration: underline;
+      text-decoration-color: var(--warm-gold);
+      text-underline-offset: .3em;
     }
-    .portrait-featured {
-      justify-content: center;
-      grid-template-columns: repeat(auto-fit, minmax(min(100%, 225px), 310px));
-      padding-bottom: clamp(26px, 4vw, 50px);
-      margin-bottom: clamp(26px, 4vw, 50px);
+    main .ambassador-content { padding-block: clamp(24px, 4vw, 55px); }
+    .ambassador-group {
+      --portrait-gap: clamp(12px, 3vw, 26px);
+      padding-block: clamp(24px, 5vw, 58px);
       border-bottom: 1px solid var(--crbf-panel-border);
+      scroll-margin-top: 24px;
     }
-    .portrait-grid figure { margin: 0; }
+    .ambassador-group h2 { margin-bottom: clamp(18px, 3vw, 36px); }
+    .portrait-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--portrait-gap);
+    }
+    .portrait-grid figure {
+      flex: 0 0 calc((100% - var(--portrait-gap)) / 2);
+      min-width: 0;
+      margin: 0;
+      text-align: center;
+    }
     .portrait-grid img {
       display: block;
-      width: min(100%, 176px);
+      width: min(100%, 160px);
       height: auto;
-      aspect-ratio: 1;
-      object-fit: cover;
-      border-radius: 50%;
-      background: #dad5cd;
       margin-inline: auto;
+      border-radius: 50%;
+      outline: 1px solid var(--warm-gold);
+      outline-offset: 3px;
+      aspect-ratio: 1;
+      object-fit: contain;
+      background: #d6ddd7;
     }
-    .portrait-featured img { width: min(100%, 208px); }
     .portrait-grid figcaption {
-      color: var(--warm-gold);
-      padding: 1rem .25rem 0;
-      font: 500 var(--crbf-card-title-size)/1.1 var(--font-cormorant), Georgia, serif;
+      padding: .95rem .15rem .4rem;
+      color: var(--charcoal);
+      font: 500 var(--crbf-card-title-size)/1.12 var(--font-cormorant), Georgia, serif;
+      overflow-wrap: anywhere;
     }
-    .portrait-role {
-      display: block;
-      margin-top: .45rem;
-      font: 700 .75rem/1.45 var(--font-manrope), Arial, sans-serif;
-      letter-spacing: .09em;
-      text-transform: uppercase;
+    .ambassador-links { margin-top: clamp(22px, 4vw, 42px); }
+    @media (min-width: 580px) {
+      .portrait-grid figure { flex-basis: calc((100% - 2 * var(--portrait-gap)) / 3); }
     }
-    .portrait-role::before {
-      content: "";
-      display: block;
-      width: 22px;
-      height: 1px;
-      margin: 0 auto .5rem;
-      background: var(--warm-gold);
+    @media (min-width: 1000px) {
+      .ambassador-group {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 3fr);
+        gap: clamp(20px, 4vw, 54px);
+      }
+      .ambassador-group h2 { margin-bottom: 0; }
+      .portrait-grid figure { flex-basis: calc((100% - 3 * var(--portrait-gap)) / 4); }
     }
-    .ambassador-group {
-      padding-block: clamp(24px, 4vw, 46px);
-      border-top: 1px solid var(--warm-gold);
-    }
-    .ambassador-group h2 {
-      margin-bottom: clamp(20px, 3vw, 32px);
-      text-align: center;
-    }
-    .ambassador-group .portrait-grid {
-      grid-template-columns: repeat(auto-fit, minmax(min(100%, 145px), 1fr));
-      justify-content: center;
-    }
-    .ambassador-group .portrait-grid img { width: min(100%, 152px); }
-    .ambassador-links { justify-content: center; }
   </style>
 </head>
 <body class="manrope_de7b2fa9-module__1ltb7q__variable cormorant_garamond_db522d64-module__k9MFuG__variable">
 <header class="site-header"><a class="brand" aria-label="CRBF home" href="/crbf-website-preview/"><span class="brand-symbol" aria-hidden="true"><img alt="" width="300" height="112" decoding="async" data-nimg="1" class="brand-mark" style="color:transparent" src="/crbf-website-preview/images/crbf-logo.png"/><img alt="" width="300" height="112" decoding="async" data-nimg="1" class="brand-lettering" style="color:transparent" src="/crbf-website-preview/images/crbf-logo.png"/></span><span class="brand-name">Cooper Rice-Brading Foundation</span></a><button class="menu-button" type="button" aria-expanded="false" aria-controls="site-navigation"><span></span><span></span><span></span><span class="sr-only">Menu</span></button><nav id="site-navigation" class="site-nav"><a href="/crbf-website-preview/about/">About</a><a href="/crbf-website-preview/research/">Research</a><a href="/crbf-website-preview/support/">Support</a><a href="/crbf-website-preview/stories/">Stories</a><a href="/crbf-website-preview/get-involved/">Get involved</a><a href="/crbf-website-preview/dedication-wall/">Dedication wall</a><a href="/crbf-website-preview/contact/">Contact</a><a class="nav-donate" href="https://donorbox.org/cooper-rice-brading-foundation">Donate</a></nav></header>
 <main>
-  <div class="content-section">
-    <h1 id="ambassador-heading">Meet our Ambassadors</h1>
+  <section class="ambassador-hero" aria-labelledby="ambassador-heading">
+    <div>
+      <h1 id="ambassador-heading">Meet our Ambassadors</h1>
+      <nav class="ambassador-nav" aria-label="Ambassador groups">
+        <a href="#ambassadors-0">Foundation ambassadors</a>
+        <a href="#ambassadors-1">Ambassadors with lived experience</a>
+        <a href="#ambassadors-2">Youth ambassadors</a>
+      </nav>
+    </div>
+  </section>
+  <div class="content-section ambassador-content">
     <section class="ambassador-group" aria-labelledby="ambassadors-0">
       <h2 id="ambassadors-0">Foundation ambassadors</h2>
       <div class="portrait-grid">
-        <figure><img src="https://www.crbf.org.au/wp-content/uploads/2018/07/image1-5-1-1-640x640.jpeg" alt="" width="176" height="176" loading="lazy" decoding="async"><figcaption>Jack Maddocks</figcaption></figure>
-        <figure><img src="https://www.crbf.org.au/wp-content/uploads/2018/06/coops_demons_roos-3.jpg" alt="" width="176" height="176" loading="lazy" decoding="async"><figcaption>Paul Roos</figcaption></figure>
-        <figure><img src="https://www.crbf.org.au/wp-content/uploads/2018/06/52ae1707-9ac7-4996-910d-ae12989c53eb-2-640x640.jpg" alt="" width="176" height="176" loading="lazy" decoding="async"><figcaption>Baxter Holt</figcaption></figure>
-        <figure><img src="https://www.crbf.org.au/wp-content/uploads/2018/06/Carolyn-8-1.jpg" alt="" width="176" height="176" loading="lazy" decoding="async"><figcaption>Lachie Swaney</figcaption></figure>
-        <figure><img src="https://www.crbf.org.au/wp-content/uploads/2025/09/Thomas-Yasmin-Profile-Pic-640x640.webp" alt="" width="176" height="176" loading="lazy" decoding="async"><figcaption>Thomas Yassmin</figcaption></figure>
-        <figure><img src="https://www.crbf.org.au/wp-content/uploads/2025/09/Ben-Donaldson-Profile-Pic-640x640.webp" alt="" width="176" height="176" loading="lazy" decoding="async"><figcaption>Ben Donaldson</figcaption></figure>
-        <figure><img src="https://www.crbf.org.au/wp-content/uploads/2018/04/Novas-Wippa-Shot-3-1-640x640.jpg" alt="" width="176" height="176" loading="lazy" decoding="async"><figcaption>Michael Wipfli</figcaption></figure>
+        <figure><img src="/crbf-website-preview/images/ambassadors/jack-maddocks.jpg" alt="" width="176" height="176" loading="lazy" decoding="async"><figcaption>Jack Maddocks</figcaption></figure>
+        <figure><img src="/crbf-website-preview/images/ambassadors/paul-roos.jpg" alt="" width="176" height="176" loading="lazy" decoding="async"><figcaption>Paul Roos</figcaption></figure>
+        <figure><img src="/crbf-website-preview/images/ambassadors/baxter-holt.jpg" alt="" width="176" height="176" loading="lazy" decoding="async"><figcaption>Baxter Holt</figcaption></figure>
+        <figure><img src="/crbf-website-preview/images/ambassadors/lachie-swaney.jpg" alt="" width="176" height="176" loading="lazy" decoding="async"><figcaption>Lachie Swaney</figcaption></figure>
+        <figure><img src="/crbf-website-preview/images/ambassadors/thomas-yassmin.jpg" alt="" width="176" height="176" loading="lazy" decoding="async"><figcaption>Thomas Yassmin</figcaption></figure>
+        <figure><img src="/crbf-website-preview/images/ambassadors/ben-donaldson.jpg" alt="" width="176" height="176" loading="lazy" decoding="async"><figcaption>Ben Donaldson</figcaption></figure>
+        <figure><img src="/crbf-website-preview/images/ambassadors/michael-wipfli.jpg" alt="" width="176" height="176" loading="lazy" decoding="async"><figcaption>Michael Wipfli</figcaption></figure>
       </div>
     </section>
     <section class="ambassador-group" aria-labelledby="ambassadors-1">
       <h2 id="ambassadors-1">Ambassadors with lived experience</h2>
       <div class="portrait-grid">
-        <figure><img src="https://www.crbf.org.au/wp-content/uploads/2022/07/charlii.jpeg" alt="" width="176" height="176" loading="lazy" decoding="async"><figcaption>Charlii Croese</figcaption></figure>
-        <figure><img src="https://www.crbf.org.au/wp-content/uploads/2022/07/f1aecace-fee9-4883-9fd3-6407b5a056de-640x640.jpg" alt="" width="176" height="176" loading="lazy" decoding="async"><figcaption>Imogen Atkins</figcaption></figure>
+        <figure><img src="/crbf-website-preview/images/ambassadors/charlii-croese.jpg" alt="" width="176" height="176" loading="lazy" decoding="async"><figcaption>Charlii Croese</figcaption></figure>
+        <figure><img src="/crbf-website-preview/images/ambassadors/imogen-atkins.jpg" alt="" width="176" height="176" loading="lazy" decoding="async"><figcaption>Imogen Atkins</figcaption></figure>
       </div>
     </section>
     <section class="ambassador-group" aria-labelledby="ambassadors-2">
       <h2 id="ambassadors-2">Youth ambassadors</h2>
       <div class="portrait-grid">
-        <figure><img src="https://www.crbf.org.au/wp-content/uploads/2018/12/Max-533x640.jpeg" alt="" width="176" height="176" loading="lazy" decoding="async"><figcaption>Max Bonic</figcaption></figure>
-        <figure><img src="https://www.crbf.org.au/wp-content/uploads/2018/12/FullSizeRender-3-e1546137443410-640x640.jpeg" alt="" width="176" height="176" loading="lazy" decoding="async"><figcaption>Joe Bonic</figcaption></figure>
-        <figure><img src="https://www.crbf.org.au/wp-content/uploads/2018/12/DSC_0561.jpg" alt="" width="176" height="176" loading="lazy" decoding="async"><figcaption>Sam Isherwood</figcaption></figure>
-        <figure><img src="https://www.crbf.org.au/wp-content/uploads/2018/12/IMG_2519-1-1.jpeg" alt="" width="176" height="176" loading="lazy" decoding="async"><figcaption>Matt Jones</figcaption></figure>
-        <figure><img src="https://www.crbf.org.au/wp-content/uploads/2018/12/IMG_0516-e1546137378999.jpg" alt="" width="176" height="176" loading="lazy" decoding="async"><figcaption>Lachie Kiel</figcaption></figure>
-        <figure><img src="https://www.crbf.org.au/wp-content/uploads/2018/10/IMG_8932-1-640x640.jpeg" alt="" width="176" height="176" loading="lazy" decoding="async"><figcaption>Alexander Magiros</figcaption></figure>
-        <figure><img src="https://www.crbf.org.au/wp-content/uploads/2018/10/IMG_1270-1-1-1.jpg" alt="" width="176" height="176" loading="lazy" decoding="async"><figcaption>Gus McGrath</figcaption></figure>
-        <figure><img src="https://www.crbf.org.au/wp-content/uploads/2018/12/IMG_1712-2-640x640.jpeg" alt="" width="176" height="176" loading="lazy" decoding="async"><figcaption>Adam Pacey</figcaption></figure>
-        <figure><img src="https://www.crbf.org.au/wp-content/uploads/2018/10/IMG_9277-1-640x640.jpg" alt="" width="176" height="176" loading="lazy" decoding="async"><figcaption>Xavier Roche</figcaption></figure>
-        <figure><img src="https://www.crbf.org.au/wp-content/uploads/2018/10/IMG_0085-1-2.jpg" alt="" width="176" height="176" loading="lazy" decoding="async"><figcaption>Warwick Ward</figcaption></figure>
-        <figure><img src="https://www.crbf.org.au/wp-content/uploads/2018/12/george_foley.jpg" alt="" width="176" height="176" loading="lazy" decoding="async"><figcaption>George Foley</figcaption></figure>
+        <figure><img src="/crbf-website-preview/images/ambassadors/matt-jones.jpg" alt="" width="176" height="176" loading="lazy" decoding="async"><figcaption>Matt Jones</figcaption></figure>
+        <figure><img src="/crbf-website-preview/images/ambassadors/lachie-kiel.jpg" alt="" width="176" height="176" loading="lazy" decoding="async"><figcaption>Lachie Kiel</figcaption></figure>
+        <figure><img src="/crbf-website-preview/images/ambassadors/alexander-magiros.jpg" alt="" width="176" height="176" loading="lazy" decoding="async"><figcaption>Alexander Magiros</figcaption></figure>
+        <figure><img src="/crbf-website-preview/images/ambassadors/xavier-roche.jpg" alt="" width="176" height="176" loading="lazy" decoding="async"><figcaption>Xavier Roche</figcaption></figure>
+        <figure><img src="/crbf-website-preview/images/ambassadors/warwick-ward.jpg" alt="" width="176" height="176" loading="lazy" decoding="async"><figcaption>Warwick Ward</figcaption></figure>
+        <figure><img src="/crbf-website-preview/images/ambassadors/george-foley.jpg" alt="" width="176" height="176" loading="lazy" decoding="async"><figcaption>George Foley</figcaption></figure>
       </div>
     </section>
     <div class="button-row ambassador-links">
