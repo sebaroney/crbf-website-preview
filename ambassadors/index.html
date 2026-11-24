@@ -110,6 +110,23 @@
       font: 400 .85rem/1.55 var(--font-manrope), Arial, sans-serif;
       color: var(--charcoal);
     }
+
+    .portrait-grid figcaption:has(> .ambassador-profile) { padding-top: 0; }
+    .ambassador-profile .portrait-name { padding-top: .95rem; }
+    .ambassador-profile summary { cursor: pointer; list-style: none; }
+    .ambassador-profile summary::-webkit-details-marker { display: none; }
+    .ambassador-profile summary:focus-visible {
+      outline: 2px solid var(--warm-gold);
+      outline-offset: 6px;
+      border-radius: 4px;
+    }
+    .ambassador-profile .portrait-name {
+      display: block;
+      text-decoration: underline;
+      text-underline-offset: .18em;
+    }
+    .ambassador-profile .ambassador-bio { text-align: left; }
+    .ambassador-profile .ambassador-bio p { margin: 0 0 .65rem; }
   </style>
 </head>
 <body class="manrope_de7b2fa9-module__1ltb7q__variable cormorant_garamond_db522d64-module__k9MFuG__variable">
@@ -132,7 +149,7 @@
         <figure><img src="/crbf-website-preview/images/ambassadors/baxter-holt.jpg" alt="" width="176" height="176" loading="lazy" decoding="async"><figcaption>Baxter Holt</figcaption></figure>
         <figure><img src="/crbf-website-preview/images/ambassadors/lachie-swaney.jpg" alt="" width="176" height="176" loading="lazy" decoding="async"><figcaption>Lachie Swaney</figcaption></figure>
         <figure><img src="/crbf-website-preview/images/ambassadors/thomas-yassmin-portrait.jpg" style="object-fit:cover" alt="" width="176" height="176" loading="lazy" decoding="async"><figcaption>Thomas Yassmin</figcaption></figure>
-        <figure><img src="/crbf-website-preview/images/ambassadors/ben-donaldson-wallabies.jpg" style="object-fit:cover" alt="" width="176" height="176" loading="lazy" decoding="async"><figcaption>Ben Donaldson<p class="ambassador-bio">Ben played junior rugby alongside Cooper at the Clovelly Eagles in Sydney. He went on to represent the Wallabies and plays for the Western Force.</p></figcaption></figure>
+        <figure><figcaption><details class="ambassador-profile"><summary><img src="/crbf-website-preview/images/ambassadors/ben-donaldson-wallabies.jpg" style="object-fit:cover" alt="" width="176" height="176" loading="lazy" decoding="async"><span class="portrait-name">Ben Donaldson</span></summary><div class="ambassador-bio"><p>Ben Donaldson plays fly-half and fullback for the Western Force and has represented Australia with the Wallabies. He made his Super Rugby debut for the NSW Waratahs in 2020 and played in all four of Australia’s matches at the 2023 Rugby World Cup. In his first season with the Force, he won the club’s Nathan Sharpe Medal as player of the season.</p><p>Before his professional career, Ben played junior rugby alongside Cooper Rice-Brading at the Clovelly Eagles in Sydney. That shared history is part of Ben’s connection to CRBF, where he now serves as a Foundation ambassador.</p></div></details></figcaption></figure>
         <figure><img src="/crbf-website-preview/images/ambassadors/michael-wipfli.jpg" alt="" width="176" height="176" loading="lazy" decoding="async"><figcaption>Michael Wipfli</figcaption></figure>
         <figure><img src="/crbf-website-preview/images/ambassadors/melissa-hoyer-headshot.jpg" alt="" width="176" height="176" loading="lazy" decoding="async"><figcaption>Melissa Hoyer</figcaption></figure>
       </div>
