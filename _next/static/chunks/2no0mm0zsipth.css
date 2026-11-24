@@ -67,8 +67,8 @@ h1, h2, h3, h4, h5, h6,
 
 /* Shared sizes for matching content roles across the site. */
 :root {
-  --crbf-display-size: calc(clamp(4.2rem, 7vw, 7.8rem) * .6561);
-  --crbf-section-size: clamp(2.8rem, 4.6vw, 4.7rem);
+  --crbf-display-size: calc(clamp(4.2rem, 7vw, 7.8rem) * .531441);
+  --crbf-section-size: var(--crbf-display-size);
   --crbf-lead-size: 1.05rem;
   --crbf-lead-leading: 1.7;
   --crbf-copy-size: 1.02rem;
@@ -130,7 +130,7 @@ main.archive .episode-summary {
 
 @media (max-width: 620px) {
   :root {
-    --crbf-display-size: calc(clamp(2.75rem, 10vw, 4.5rem) * .6561);
+    --crbf-display-size: calc(clamp(2.75rem, 10vw, 4.5rem) * .531441);
   }
 }
 

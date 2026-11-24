@@ -304,8 +304,3 @@ main:has(.research-page-title) .donate-cta {
   }
 }
 
-/* Shared size for the Research page title and major section headings. */
-main h1.research-page-title,
-main:has(.research-page-title) :is(.content-section, .collaboration-heading) h2 {
-  font-size: calc(var(--crbf-display-size) * .81);
-}
