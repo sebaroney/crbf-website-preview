@@ -341,3 +341,77 @@ main:has(.support-page-title) .content-section.narrow li {
   padding-block: .8rem;
   border-top: 1px solid var(--crbf-panel-border);
 }
+
+/* Charcoal panels */
+main :is(.legacy, .content-section.narrow:has(> blockquote > .quote-attribution),
+.research-fellowships, .content-section:has(> .story-grid), .contact-card,
+.content-section[aria-labelledby="board-heading"] .portrait-featured,
+.ambassador-group[aria-labelledby="ambassadors-1"], .governance-cards > article:has(a[href$=".pdf"])),
+main:has(.support-page-title) > .inner-hero,
+main:has(.content-grid article > .eyebrow) > .inner-hero:not(.has-image),
+main:has(.inner-hero):not(:has(.research-page-title)) > .donate-cta,
+main.archive .year-nav {
+  background: var(--charcoal);
+  color: var(--off-white);
+}
+
+main :is(.legacy, .content-section.narrow:has(> blockquote > .quote-attribution),
+.research-fellowships, .content-section:has(> .story-grid),
+.content-section[aria-labelledby="board-heading"] .portrait-featured,
+.ambassador-group[aria-labelledby="ambassadors-1"]) {
+  border-top: 2px solid var(--warm-gold);
+}
+
+main :is(.content-section.narrow:has(> blockquote > .quote-attribution),
+.research-fellowships, .content-section:has(> .story-grid)) {
+  border-radius: 6px;
+  width: calc(100% - 48px);
+  padding-inline: clamp(16px, 4vw, 52px);
+  margin-bottom: clamp(24px, 4vw, 48px);
+}
+
+main .legacy-copy > p:not(.eyebrow),
+main .content-section.narrow:has(> blockquote > .quote-attribution) > p:not(.eyebrow),
+main:has(.support-page-title) .inner-hero > div:first-child > p:last-child,
+main:has(.content-grid article > .eyebrow) > .inner-hero:not(.has-image) > div > p:last-child,
+main:has(.inner-hero):not(:has(.research-page-title)) > .donate-cta p,
+main .content-section:has(> .story-grid) .story-grid p,
+main .governance-cards > article:has(a[href$=".pdf"]) p {
+  color: var(--off-white);
+}
+
+main .legacy .text-link,
+main .content-section.narrow:has(> blockquote > .quote-attribution) > .eyebrow,
+main:has(.research-page-title) .research-fellowships > .eyebrow,
+main:has(.support-page-title) .inner-hero > div > .eyebrow,
+main:has(.content-grid article > .eyebrow) > .inner-hero:not(.has-image) .eyebrow,
+main .governance-cards > article:has(a[href$=".pdf"]) .text-link {
+  color: var(--warm-gold);
+}
+
+main .content-section:has(> .story-grid) .story-grid,
+main .content-section:has(> .story-grid) .story-grid > a + a {
+  border-color: #ffffff38;
+}
+
+main .content-section[aria-labelledby="board-heading"] .portrait-featured,
+main .ambassador-group[aria-labelledby="ambassadors-1"] {
+  padding: clamp(20px, 4vw, 44px) clamp(16px, 4vw, 46px);
+  border-radius: 6px;
+}
+main .ambassador-group[aria-labelledby="ambassadors-1"] {
+  margin-block-start: clamp(24px, 4vw, 48px);
+}
+
+main.archive .year-nav {
+  padding: 14px;
+  border-radius: 6px;
+}
+main.archive .year-nav a {
+  border-color: var(--warm-gold);
+}
+main.archive .year-nav a:hover,
+main:has(.inner-hero):not(:has(.research-page-title)) > .donate-cta .button-dark {
+  background: var(--warm-gold);
+  color: var(--charcoal);
+}
