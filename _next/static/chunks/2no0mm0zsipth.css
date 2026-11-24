@@ -65,27 +65,15 @@ h1, h2, h3, h4, h5, h6,
   --brand-name-increase: .0625rem;
 }
 
-/* Our impact hero heading */
-.inner-hero h1.about-page-title {
-  font-size: clamp(3.52rem, 5.6vw, 5.6rem);
-}
-
-@media (max-width: 620px) {
-  .inner-hero h1.about-page-title {
-    font-size: clamp(3.04rem, 15.2vw, 4.48rem);
-  }
-}
-
-
-/* Homepage typography applied to the same content roles on every page. */
+/* Shared sizes for matching content roles across the site. */
 :root {
-  --crbf-display-size: clamp(4.2rem, 7vw, 7.8rem);
-  --crbf-section-size: clamp(2.8rem, 4.6vw, 4.7rem);
+  --crbf-display-size: calc(clamp(4.2rem, 7vw, 7.8rem) * .6561);
+  --crbf-section-size: calc(clamp(2.8rem, 4.6vw, 4.7rem) * .81);
   --crbf-lead-size: 1.05rem;
   --crbf-lead-leading: 1.7;
   --crbf-copy-size: 1.02rem;
   --crbf-copy-leading: 1.8;
-  --crbf-card-title-size: 2rem;
+  --crbf-card-title-size: 1.62rem;
   --crbf-card-copy-size: .88rem;
   --crbf-card-copy-leading: 1.7;
 }
@@ -125,8 +113,8 @@ main.archive .archive-intro {
   line-height: var(--crbf-copy-leading);
 }
 
-.initiative-grid h3, .content-grid h3, .process-grid h3, .numbered-list h3,
-main.archive .entry {
+.pillars h2, .initiative-grid h3, .story-grid h3, .content-grid h3,
+.process-grid h3, .numbered-list h3, main.archive .entry {
   font-size: var(--crbf-card-title-size);
   font-weight: 500;
   line-height: 1.05;
@@ -141,16 +129,8 @@ main.archive .episode-summary {
 }
 
 @media (max-width: 620px) {
-  .hero h1 {
-    font-size: clamp(3.8rem, 19vw, 5.6rem);
-  }
-
-  .inner-hero h1, main.archive h1 {
-    font-size: clamp(2.75rem, 10vw, 4.5rem);
-  }
-
-  main.archive .entry {
-    font-size: clamp(1.35rem, 5vw, 2rem);
+  :root {
+    --crbf-display-size: calc(clamp(2.75rem, 10vw, 4.5rem) * .6561);
   }
 }
 
@@ -173,16 +153,6 @@ main.archive .episode-summary {
 
   .impact-grid > div {
     min-height: 128px;
-  }
-}
-
-/* Smaller Support page headline. */
-.inner-hero h1.support-page-title {
-  font-size: calc(var(--crbf-display-size) * .729);
-}
-@media (max-width: 620px) {
-  .inner-hero h1.support-page-title {
-    font-size: calc(clamp(2.75rem, 10vw, 4.5rem) * .729);
   }
 }
 

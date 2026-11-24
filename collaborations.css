@@ -14,7 +14,7 @@
 .collaboration-heading h2 {
   margin: 0;
   font-family: var(--font-cormorant), Georgia, serif;
-  font-size: clamp(2.8rem, 4.6vw, 4.7rem);
+  font-size: var(--crbf-section-size);
   font-weight: 500;
   line-height: .98;
   letter-spacing: -.035em;
@@ -109,25 +109,7 @@
   clip-path: circle(48%);
 }
 
-/* Research page headings are two type steps smaller. */
-main .inner-hero h1.research-page-title {
-  font-size: calc(var(--crbf-display-size) * .81);
-}
-
-main :is(.content-section, .collaboration-heading) h2 {
-  font-size: calc(var(--crbf-section-size) * .81);
-}
-
-main .content-grid h3 {
-  font-size: calc(var(--crbf-card-title-size) * .81);
-}
-
+/* Emphasis within the research introduction. */
 main .research-case strong {
   font-size: calc(clamp(1.75rem, 3vw, 2.5rem) * .81);
-}
-
-@media (max-width: 620px) {
-  main .inner-hero h1.research-page-title {
-    font-size: calc(clamp(2.75rem, 10vw, 4.5rem) * .81);
-  }
 }
