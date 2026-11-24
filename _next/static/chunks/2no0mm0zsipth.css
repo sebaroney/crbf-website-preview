@@ -175,3 +175,13 @@ main.archive .episode-summary {
     min-height: 128px;
   }
 }
+
+/* Smaller Support page headline. */
+.inner-hero h1.support-page-title {
+  font-size: calc(var(--crbf-display-size) * .729);
+}
+@media (max-width: 620px) {
+  .inner-hero h1.support-page-title {
+    font-size: calc(clamp(2.75rem, 10vw, 4.5rem) * .729);
+  }
+}

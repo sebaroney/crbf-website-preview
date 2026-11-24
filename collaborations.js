@@ -1,52 +1,110 @@
-const partnerReducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
-let partnerAutoplay = !partnerReducedMotion.matches;
+const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
+let playing = !reducedMotion.matches;
+let track;
+let duplicate;
+let position = 0;
+let previousTime = 0;
+let resumeAt = 0;
+let moving = false;
 
-function movePartnerCarousel(slides, forward) {
-  const [first, second] = slides.children;
-  if (!second) return;
+function setupTrack(slides) {
+  track = slides;
+  duplicate = undefined;
+  position = slides?.scrollLeft ?? 0;
+  moving = false;
+  if (!slides || slides.children.length < 2) return;
 
-  const start = first.offsetLeft - slides.offsetLeft;
-  const stride = second.offsetLeft - first.offsetLeft;
-  const end = slides.scrollWidth - slides.clientWidth;
-  const current = slides.scrollLeft;
-  const position = forward
-    ? (current >= end - 2 ? 0 : Math.min(end, current + stride))
-    : (current <= start + 2 ? end : Math.max(0, current - stride));
-  slides.scrollTo({ left: position, behavior: partnerReducedMotion.matches ? 'auto' : 'smooth' });
+  let copies = [...slides.querySelectorAll('[data-collaboration-copy]')];
+  if (!copies.length) {
+    copies = [...slides.children].map(card => {
+      const copy = card.cloneNode(true);
+      copy.setAttribute('data-collaboration-copy', '');
+      copy.setAttribute('aria-hidden', 'true');
+      copy.querySelectorAll('a').forEach(link => { link.tabIndex = -1; });
+      return copy;
+    });
+    slides.append(...copies);
+  }
+  duplicate = copies[0];
 }
 
-function syncPartnerPlayback() {
+function loopWidth() {
+  return duplicate.getBoundingClientRect().left -
+    track.firstElementChild.getBoundingClientRect().left;
+}
+
+function animatePartners(time) {
+  requestAnimationFrame(animatePartners);
+  const elapsed = Math.min(time - previousTime, 50);
+  previousTime = time;
+
+  const slides = document.getElementById('collaboration-slides');
+  if (slides !== track) setupTrack(slides);
   const button = document.querySelector('[data-collaboration-playback]');
-  const label = partnerAutoplay ? 'Pause' : 'Play';
+  const label = playing ? 'Pause' : 'Play';
   if (button && button.textContent !== label) button.textContent = label;
+  if (!duplicate) return;
+
+  const bounds = track.getBoundingClientRect();
+  const inView = bounds.bottom > 0 && bounds.top < innerHeight;
+  const focused = track.contains(document.activeElement) &&
+    document.activeElement.matches(':focus-visible');
+  const shouldMove = playing && inView && !document.hidden && !focused && time >= resumeAt;
+
+  if (shouldMove !== moving) {
+    moving = shouldMove;
+    position = track.scrollLeft;
+    track.style.scrollSnapType = moving ? 'none' : '';
+  }
+  if (!moving) return;
+
+  const width = loopWidth();
+  if (width > 0) {
+    position = (position + elapsed * .042) % width;
+    track.scrollTo({ left: position, behavior: 'instant' });
+  }
 }
+
+document.addEventListener('pointerdown', event => {
+  if (event.target.closest('#collaboration-slides')) resumeAt = performance.now() + 5000;
+}, { passive: true });
+
+document.addEventListener('wheel', event => {
+  if (event.deltaX && event.target.closest('#collaboration-slides')) {
+    resumeAt = performance.now() + 5000;
+  }
+}, { passive: true });
 
 document.addEventListener('click', event => {
   const button = event.target.closest('[data-collaboration-direction], [data-collaboration-playback]');
-  if (!button) return;
-  const slides = document.getElementById(button.getAttribute('aria-controls'));
-  if (!slides) return;
+  if (!button || !duplicate) return;
 
   if (button.hasAttribute('data-collaboration-playback')) {
-    partnerAutoplay = !partnerAutoplay;
-    syncPartnerPlayback();
-    if (partnerAutoplay) movePartnerCarousel(slides, true);
-  } else {
-    movePartnerCarousel(slides, button.dataset.collaborationDirection === 'next');
+    playing = !playing;
+    resumeAt = 0;
+    return;
   }
+
+  resumeAt = performance.now() + 2500;
+  moving = false;
+  track.style.scrollSnapType = '';
+  const width = loopWidth();
+  const [first, second] = track.children;
+  const stride = second.getBoundingClientRect().left - first.getBoundingClientRect().left;
+  if (width <= 0 || stride <= 0) return;
+  const count = Math.round(width / stride);
+  const index = Math.round((track.scrollLeft % width) / stride);
+  const delta = button.dataset.collaborationDirection === 'next' ? 1 : -1;
+  const next = (index + delta + count) % count;
+  track.scrollTo({ left: next * stride, behavior: reducedMotion.matches ? 'instant' : 'smooth' });
 });
 
-partnerReducedMotion.addEventListener('change', event => {
-  if (event.matches) partnerAutoplay = false;
-  syncPartnerPlayback();
+reducedMotion.addEventListener('change', event => {
+  if (event.matches) playing = false;
 });
 
-setInterval(() => {
-  syncPartnerPlayback();
-  const slides = document.getElementById('collaboration-slides');
-  if (!partnerAutoplay || !slides || document.hidden) return;
-  const section = slides.closest('.collaboration-section');
-  if (section?.matches(':hover, :focus-within')) return;
-  const bounds = slides.getBoundingClientRect();
-  if (bounds.bottom > 0 && bounds.top < innerHeight) movePartnerCarousel(slides, true);
-}, 4000);
+if (document.readyState === 'complete') {
+  requestAnimationFrame(animatePartners);
+} else {
+  window.addEventListener('load', () => requestAnimationFrame(animatePartners), { once: true });
+}
