@@ -26,13 +26,13 @@
 .collaboration-controls .button {
   min-height: 44px;
   padding-inline: 18px;
-  border: 1px solid #bcb1a0;
+  border: 1px solid var(--warm-gold);
   border-radius: 999px;
   color: var(--charcoal);
   cursor: pointer;
 }
 .collaboration-controls .button:hover {
-  background: #eae5dd;
+  background: color-mix(in srgb, var(--warm-gold) 22%, white);
 }
 .collaboration-slides {
   display: grid;
@@ -43,7 +43,7 @@
   overscroll-behavior-x: contain;
   scroll-snap-type: x mandatory;
   scrollbar-width: thin;
-  scrollbar-color: #ac9c84 transparent;
+  scrollbar-color: var(--warm-gold) transparent;
   margin: 0;
   padding: 4px 4px 16px;
   list-style: none;
@@ -119,7 +119,7 @@ main .research-case strong {
   grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr);
   gap: clamp(28px, 6vw, 88px);
   padding-block: clamp(32px, 6vw, 84px);
-  background: linear-gradient(125deg, #f4efe8, #e9e1d6);
+  background: linear-gradient(125deg, var(--off-white), color-mix(in srgb, var(--warm-gold) 24%, white));
 }
 
 .inner-hero:has(.research-page-title) .inner-hero-image {
@@ -129,9 +129,18 @@ main .research-case strong {
   border-radius: 8px;
 }
 
-.inner-hero:has(.research-page-title) .eyebrow,
-.research-fellowships > .eyebrow {
-  color: #80663e;
+main:has(.research-page-title) .eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--charcoal);
+}
+
+main:has(.research-page-title) .eyebrow::before {
+  content: "";
+  width: 24px;
+  height: 2px;
+  background: var(--warm-gold);
 }
 
 .content-section.narrow.research-case {
@@ -152,12 +161,12 @@ main .research-case strong {
   align-content: center;
   padding: clamp(18px, 3vw, 34px);
   border-left: 2px solid var(--warm-gold);
-  background: #eee8df;
+  background: color-mix(in srgb, var(--warm-gold) 18%, white);
   border-radius: 0 6px 6px 0;
 }
 
 .research-case strong {
-  color: #685131;
+  color: var(--charcoal);
 }
 
 .content-section:has(> .research-portfolio) {
@@ -181,7 +190,7 @@ main .research-case strong {
   min-width: 0;
   padding: clamp(18px, 3vw, 34px);
   background: #fff;
-  border: 1px solid #ded5c8;
+  border: 1px solid color-mix(in srgb, var(--warm-gold) 50%, white);
   border-radius: 6px;
 }
 
@@ -199,12 +208,16 @@ main .research-case strong {
   margin-top: 10px;
 }
 
+.research-portfolio dt {
+  color: var(--charcoal);
+}
+
 .research-portfolio dd {
   line-height: 1.45;
 }
 
 .research-fellowships .research-portfolio > article {
-  background: #f1ebe2;
+  background: color-mix(in srgb, var(--warm-gold) 14%, white);
 }
 
 .research-fellowships .research-portfolio article > p {
@@ -213,7 +226,7 @@ main .research-case strong {
 
 main:has(.research-page-title) .donate-cta {
   margin-top: clamp(12px, 3vw, 36px);
-  background: #e4d8c5;
+  background: var(--warm-gold);
 }
 
 main:has(.research-page-title) .donate-cta p {
@@ -236,7 +249,14 @@ main:has(.research-page-title) .donate-cta p {
 
   .research-case > p:has(> strong) {
     grid-column: 2;
-    grid-row: span 2;
+  }
+
+  .research-case > p:nth-of-type(3) {
+    grid-row: 1 / span 2;
+  }
+
+  .research-case > p:nth-of-type(5) {
+    grid-row: 3 / span 2;
   }
 }
 
