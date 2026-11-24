@@ -144,29 +144,29 @@ main:has(.research-page-title) .eyebrow:not(.inner-hero .eyebrow)::before {
 }
 
 .content-section.narrow.research-case {
-  max-width: 1180px;
-  display: grid;
-  row-gap: clamp(8px, 1.1vw, 14px);
-  padding-block: clamp(28px, 4.5vw, 60px);
+  max-width: 780px;
+  padding-block: clamp(30px, 4vw, 52px);
 }
 
 .research-case > p:not(.eyebrow) {
+  max-width: none;
   margin: 0;
-  max-width: 63ch;
+  line-height: 1.65;
+}
+
+.research-case > p:not(.eyebrow) + p:not(.eyebrow) {
+  margin-top: 10px;
 }
 
 .research-case > p:has(> strong) {
-  max-width: none;
-  display: grid;
-  align-content: center;
-  padding: clamp(14px, 2vw, 24px);
+  padding: 3px 0 3px 15px;
   border-left: 2px solid var(--warm-gold);
-  background: color-mix(in srgb, var(--warm-gold) 18%, white);
-  border-radius: 0 6px 6px 0;
 }
 
 .research-case strong {
+  display: block;
   color: var(--charcoal);
+  line-height: 1.15;
 }
 
 .content-section:has(> .research-portfolio) {
@@ -237,29 +237,6 @@ main:has(.research-page-title) .donate-cta p {
   flex-wrap: wrap;
 }
 
-@media (min-width: 901px) {
-  .research-case {
-    grid-template-columns: minmax(0, 1fr) minmax(0, .92fr);
-    column-gap: clamp(30px, 7vw, 95px);
-  }
-
-  .research-case > p:not(:has(> strong)) {
-    grid-column: 1;
-  }
-
-  .research-case > p:has(> strong) {
-    grid-column: 2;
-  }
-
-  .research-case > p:nth-of-type(3) {
-    grid-row: 1 / span 2;
-  }
-
-  .research-case > p:nth-of-type(5) {
-    grid-row: 3 / span 2;
-  }
-}
-
 @media (max-width: 900px) {
   .inner-hero:has(.research-page-title) {
     grid-template-columns: minmax(0, 1fr);
@@ -281,13 +258,6 @@ main:has(.research-page-title) .donate-cta p {
 
 .inner-hero:has(.research-page-title) .inner-hero-image {
   border: 1px solid var(--crbf-panel-border);
-}
-
-.content-section.narrow.research-case > p:has(> strong) {
-  border: 1px solid var(--crbf-panel-border);
-  border-left: 3px solid var(--warm-gold);
-  border-radius: 6px;
-  background: var(--crbf-panel-tint);
 }
 
 .content-section:has(> .research-portfolio) {
