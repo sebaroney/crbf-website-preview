@@ -9,28 +9,47 @@
   <style>
     .portrait-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(min(100%, 245px), 1fr));
-      gap: clamp(16px, 3vw, 30px);
-      max-width: 980px;
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 225px), 1fr));
+      gap: clamp(20px, 4vw, 44px);
+      text-align: center;
     }
-    .portrait-grid figure {
-      margin: 0;
-      border: 1px solid var(--crbf-panel-border);
-      border-radius: 6px;
-      overflow: hidden;
-      background: white;
+    .portrait-featured {
+      justify-content: center;
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 225px), 310px));
+      padding-bottom: clamp(26px, 4vw, 50px);
+      margin-bottom: clamp(26px, 4vw, 50px);
+      border-bottom: 1px solid var(--crbf-panel-border);
     }
+    .portrait-grid figure { margin: 0; }
     .portrait-grid img {
       display: block;
-      aspect-ratio: 1;
-      width: 100%;
+      width: min(100%, 176px);
       height: auto;
+      aspect-ratio: 1;
       object-fit: contain;
+      border-radius: 50%;
       background: #dad5cd;
+      margin-inline: auto;
     }
+    .portrait-featured img { width: min(100%, 208px); }
     .portrait-grid figcaption {
-      padding: .85rem 1rem 1rem;
-      font: 500 var(--crbf-card-title-size)/1.05 var(--font-cormorant), Georgia, serif;
+      padding: 1rem .25rem 0;
+      font: 500 var(--crbf-card-title-size)/1.1 var(--font-cormorant), Georgia, serif;
+    }
+    .portrait-role {
+      display: block;
+      margin-top: .45rem;
+      font: 700 .75rem/1.45 var(--font-manrope), Arial, sans-serif;
+      letter-spacing: .09em;
+      text-transform: uppercase;
+    }
+    .portrait-role::before {
+      content: "";
+      display: block;
+      width: 22px;
+      height: 1px;
+      margin: 0 auto .5rem;
+      background: var(--warm-gold);
     }
   </style>
 </head>
@@ -41,20 +60,23 @@
     <div>
       <p class="eyebrow">Cooper Rice-Brading Foundation</p>
       <h1>Board portrait preview</h1>
-      <p>Portraits from the public CRBF Board page with matching beige backgrounds.</p>
+      <p>The Foundation’s Chair, Patron and Board portraits.</p>
     </div>
   </section>
-  <section class="content-section" aria-label="Board portraits">
+  <section class="content-section" aria-label="Board and Patron portraits">
+    <div class="portrait-grid portrait-featured">
+      <figure><img src="/crbf-website-preview/images/board/trish-henry.png" width="640" height="640" alt="" decoding="async"><figcaption>The Honourable Trish Henry<span class="portrait-role">Chair</span></figcaption></figure>
+      <figure><img src="/crbf-website-preview/images/board/robert-beech-jones.png" width="213" height="237" alt="" decoding="async"><figcaption>The Honourable Robert Beech-Jones<span class="portrait-role">Patron</span></figcaption></figure>
+    </div>
     <div class="portrait-grid">
-      <figure><img src="/crbf-website-preview/images/board/trish-henry.png" width="640" height="640" alt="" decoding="async"><figcaption>The Honourable Trish Henry</figcaption></figure>
-      <figure><img src="/crbf-website-preview/images/board/colin-brading.png" width="640" height="640" alt="" decoding="async"><figcaption>Colin Brading</figcaption></figure>
-      <figure><img src="/crbf-website-preview/images/board/keith-cox.png" width="450" height="452" alt="" decoding="async"><figcaption>Keith Cox, OAM</figcaption></figure>
-      <figure><img src="/crbf-website-preview/images/board/kylie-bryant.png" width="200" height="200" alt="" decoding="async"><figcaption>Kylie Bryant</figcaption></figure>
-      <figure><img src="/crbf-website-preview/images/board/julie-robb.png" width="199" height="194" alt="" decoding="async"><figcaption>Julie Robb</figcaption></figure>
-      <figure><img src="/crbf-website-preview/images/board/neil-gibson.png" width="150" height="180" alt="" decoding="async"><figcaption>Neil Gibson</figcaption></figure>
-      <figure><img src="/crbf-website-preview/images/board/julian-hofer.png" width="640" height="640" alt="" decoding="async"><figcaption>Julian Hofer</figcaption></figure>
-      <figure><img src="/crbf-website-preview/images/board/heide-robson.png" width="640" height="640" alt="" decoding="async"><figcaption>Heide Robson</figcaption></figure>
-      <figure><img src="/crbf-website-preview/images/board/ross-mclean.png" width="640" height="640" alt="" decoding="async"><figcaption>Ross McLean</figcaption></figure>
+      <figure><img src="/crbf-website-preview/images/board/colin-brading.png" width="640" height="640" alt="" decoding="async"><figcaption>Colin Brading<span class="portrait-role">Company Secretary</span></figcaption></figure>
+      <figure><img src="/crbf-website-preview/images/board/keith-cox.png" width="450" height="452" alt="" decoding="async"><figcaption>Keith Cox, OAM<span class="portrait-role">Medical Advisory Director</span></figcaption></figure>
+      <figure><img src="/crbf-website-preview/images/board/kylie-bryant.png" width="200" height="200" alt="" decoding="async"><figcaption>Kylie Bryant<span class="portrait-role">Director, Government</span></figcaption></figure>
+      <figure><img src="/crbf-website-preview/images/board/julie-robb.png" width="199" height="194" alt="" decoding="async"><figcaption>Julie Robb<span class="portrait-role">Director</span></figcaption></figure>
+      <figure><img src="/crbf-website-preview/images/board/neil-gibson.png" width="150" height="180" alt="" decoding="async"><figcaption>Neil Gibson<span class="portrait-role">Director</span></figcaption></figure>
+      <figure><img src="/crbf-website-preview/images/board/julian-hofer.png" width="640" height="640" alt="" decoding="async"><figcaption>Julian Hofer<span class="portrait-role">Director, Philanthropic Engagement</span></figcaption></figure>
+      <figure><img src="/crbf-website-preview/images/board/heide-robson.png?v=toned" width="640" height="640" alt="" decoding="async"><figcaption>Heide Robson<span class="portrait-role">Finance Director</span></figcaption></figure>
+      <figure><img src="/crbf-website-preview/images/board/ross-mclean.png" width="640" height="640" alt="" decoding="async"><figcaption>Ross McLean<span class="portrait-role">Legal Director</span></figcaption></figure>
     </div>
   </section>
 </main>
