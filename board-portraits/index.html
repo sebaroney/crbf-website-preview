@@ -15,10 +15,17 @@
     }
     .portrait-featured {
       justify-content: center;
-      grid-template-columns: repeat(auto-fit, minmax(min(100%, 225px), 310px));
+      grid-template-columns: minmax(0, 310px);
       padding-bottom: clamp(26px, 4vw, 50px);
       margin-bottom: clamp(26px, 4vw, 50px);
       border-bottom: 1px solid var(--crbf-panel-border);
+    }
+    @media (min-width: 760px) {
+      .portrait-featured {
+        grid-template-columns: repeat(3, minmax(0, 310px));
+        align-items: center;
+      }
+      .portrait-featured figure:first-child { grid-column: 2; }
     }
     .portrait-grid figure { margin: 0; }
     .portrait-grid img {
