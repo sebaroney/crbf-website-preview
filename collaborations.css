@@ -197,7 +197,7 @@ main:has(.research-page-title) .eyebrow:not(.inner-hero .eyebrow)::before {
 
 .research-portfolio h3 {
   margin-bottom: 16px;
-  color: var(--charcoal);
+  color: var(--warm-gold);
 }
 
 .research-portfolio dl {
