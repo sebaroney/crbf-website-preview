@@ -12,7 +12,7 @@ document.addEventListener('click', event => {
   const next = button.dataset.collaborationDirection === 'next';
   const position = next
     ? (current >= end - 2 ? 0 : Math.min(end, current + stride))
-    : (current <= 2 ? end : Math.max(0, current - stride));
+    : (current <= first.offsetLeft - slides.offsetLeft + 2 ? end : Math.max(0, current - stride));
   const behavior = matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth';
   slides.scrollTo({ left: position, behavior });
 });
