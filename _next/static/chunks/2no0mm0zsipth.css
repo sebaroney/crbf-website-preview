@@ -717,4 +717,4 @@ crbf-news-post { display:block; }
 .memorial-reader .reader-layout > figure > img { width:100%; height:100%; object-fit:cover; object-position:center 30%; }
 
 /* Centre Matt in the circular crop of the family photograph. */
-main img[src*="/dedications/matthew-fisher.jpg"] { object-position: 94% center; }
+:is(.memorial-reader .reader-layout, .honour-wall .honour-photo, .dedication-preview .dedication-names) img[src*="/dedications/matthew-fisher.jpg"] { object-position: 94% center; }
