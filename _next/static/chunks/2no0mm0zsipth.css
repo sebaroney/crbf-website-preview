@@ -588,3 +588,13 @@ main .button-gold, main .button-ghost:hover { color: #171713; }
   html { scroll-behavior: auto; }
   .site-nav a::after, main .button, main .text-link span { transition: none; }
 }
+
+/* Make funding cards and their imagery a single click target. */
+main :is(article,section):has(.priority-link),
+main article:has(a[href$="/fergus-mcculla/"]) { position: relative; }
+.priority-link { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: .15em; }
+.priority-link::after,
+main article a[href$="/fergus-mcculla/"]::after { content: ""; position: absolute; inset: 0; }
+.support-feature .button-row a { position: relative; z-index: 1; }
+main :is(article,section):has(> :is(h2,h3) > .priority-link:hover),
+main article:has(a[href$="/fergus-mcculla/"]:hover) { box-shadow: inset 0 0 0 1px var(--warm-gold); }
