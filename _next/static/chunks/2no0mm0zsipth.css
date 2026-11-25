@@ -661,3 +661,24 @@ main .story-grid .news-thumbnail { width: 100%; height: auto; aspect-ratio: 16/1
 .story-grid img[src$="/rare-cancers-day.jpg"], .story-grid img[src$="/stacey-walvin.jpg"],
 .story-grid img[src$="/rpa-symposium.jpg"] { object-fit: contain; background: var(--crbf-paper); }
 .dedication-names img[src$="/team-andrew.jpg"] { object-fit: contain; background: var(--charcoal); }
+
+main .newsroom { max-width: 1400px; padding-block: clamp(32px,5.5vw,76px); }
+.newsroom .news-title { padding-bottom: .4em; border-bottom: 1px solid var(--warm-gold); }
+main .newsroom > .news-grid { margin-top: clamp(20px,3vw,36px); }
+.news-social {
+  align-self: start; min-width: 0; padding: clamp(14px,2vw,25px);
+  background: var(--soft-ivory); border-top: 2px solid var(--warm-gold);
+}
+.news-social header { display: flex; align-items: baseline; flex-wrap: wrap; justify-content: space-between; gap: 6px 12px; margin-bottom: 16px; }
+.news-social header h3 { font: 500 1.85rem/1.1 var(--font-cormorant), Georgia, serif; margin: 0; }
+.news-social .text-link { font-size: .75rem; text-transform: none; }
+.news-social iframe { display: block; width: 100%; height: auto; aspect-ratio: 1 / 1.19; min-height: 372px; border: 1px solid var(--crbf-rule); background: white; }
+@media (min-width: 1000px) {
+  main .newsroom > .news-grid { grid-template-columns: minmax(0,1fr) minmax(0,1fr) minmax(330px,1.16fr); }
+  .news-social { grid-column: 3; grid-row: 1 / span 3; position: sticky; top: 18px; }
+}
+@media (min-width: 621px) and (max-width: 999px) {
+  main .newsroom > .news-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .news-social { grid-column: 1 / -1; grid-row: 2; display: grid; grid-template-columns: 1fr 1.5fr; gap: 24px; }
+  .news-social header { display: block; }
+}
