@@ -715,3 +715,6 @@ crbf-news-post { display:block; }
 
 .memorial-reader .reader-layout > figure { width:min(100%,235px); aspect-ratio:1; border-radius:50%; overflow:hidden; background:var(--soft-ivory); margin:0 auto; }
 .memorial-reader .reader-layout > figure > img { width:100%; height:100%; object-fit:cover; object-position:center 30%; }
+
+/* Centre Matt in the circular crop of the family photograph. */
+main img[src*="/dedications/matthew-fisher.jpg"] { object-position: 94% center; }
