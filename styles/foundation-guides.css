@@ -1,0 +1,11 @@
+.foundation-guide { max-width: 72rem; }
+.foundation-guide .guide-intro { max-width: 71ch; line-height: 1.7; margin-block: 1rem 0; }
+.guide-layout { display:grid; grid-template-columns:minmax(13rem,.8fr) minmax(0,1.5fr); gap:clamp(2rem,5vw,5rem); margin-top:2rem; }
+.guide-layout aside { align-self:start; padding:1.1rem; background:var(--crbf-paper); border-top:1px solid var(--warm-gold); }
+.guide-layout aside img { width:100%; height:auto; display:block; }
+.guide-layout aside p, .guide-layout aside a { line-height:1.6; font-size:.94rem; }
+.guide-sections a { display:block; padding:.65rem .2rem; }
+.foundation-guide .reader-copy section:first-child h2 { margin-top:0; }
+.foundation-guide .guide-source { font-size:.86rem; color:var(--crbf-deep-gold); }
+.foundation-guide section[id] { scroll-margin-top:7rem; }
+@media(max-width:48rem){.guide-layout { grid-template-columns:1fr; gap:1.5rem; } }
