@@ -67,6 +67,39 @@
       this.querySelector('article').insertBefore(frame, link);
     }
   }
+  // The public profile is rendered by Instagram. Keep it current when a visitor
+  // returns to the page, and while the feed is on screen and not in use.
+  class ProfileFeed extends HTMLElement {
+    connectedCallback() {
+      const frame = this.querySelector('iframe');
+      if (!frame && document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', () => {
+          if (this.isConnected) this.connectedCallback();
+        }, {once: true});
+        return;
+      }
+      if (!frame || this.timer) return;
+      this.loadedAt = Date.now();
+      let visible = false;
+      this.observer = new IntersectionObserver(([entry]) => { visible = entry.isIntersecting; });
+      this.observer.observe(frame);
+      this.refresh = () => {
+        if (document.hidden || !visible || document.activeElement === frame ||
+            Date.now() - this.loadedAt < 60000) return;
+        this.loadedAt = Date.now();
+        frame.src = 'https://www.instagram.com/crbfoundation/embed/';
+      };
+      document.addEventListener('visibilitychange', this.refresh);
+      this.timer = window.setInterval(this.refresh, 60000);
+    }
+    disconnectedCallback() {
+      this.observer?.disconnect();
+      clearInterval(this.timer);
+      this.timer = null;
+      document.removeEventListener('visibilitychange', this.refresh);
+    }
+  }
+  customElements.define('crbf-profile-feed', ProfileFeed);
   customElements.define('crbf-news-grid', NewsGrid);
   customElements.define('crbf-news-post', NewsPost);
 })();
