@@ -1,0 +1,148 @@
+.about-page {
+  --about-gutter: clamp(1.25rem, 5vw, 5rem);
+  --about-space: clamp(2.25rem, 4.5vw, 4.25rem);
+  --about-serif: var(--font-cormorant), Georgia, serif;
+  color: var(--charcoal);
+}
+.about-page .about-wrap {
+  width: min(calc(100% - 2 * var(--about-gutter)), 70rem);
+  margin-inline: auto;
+}
+.about-page h1, .about-page h2, .about-page h3, .about-page p,
+.about-page figure, .about-page blockquote { margin: 0; }
+.about-page .about-label {
+  font: 600 .9rem/1.3 var(--about-serif);
+  letter-spacing: .11em;
+  text-transform: uppercase;
+  color: var(--crbf-deep-gold);
+}
+.about-intro {
+  padding-block: var(--about-space);
+  background: var(--crbf-paper);
+  border-bottom: 1px solid var(--crbf-rule);
+}
+.about-intro > .about-wrap {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr);
+  grid-template-rows: auto auto;
+  grid-template-areas: "portrait title" "portrait introduction";
+  column-gap: clamp(2.5rem, 6vw, 6rem);
+}
+.about-intro header { grid-area: title; align-self: end; }
+.about-intro .about-page-title {
+  margin-top: .65rem;
+  font: 500 var(--crbf-display-size)/1.04 var(--about-serif);
+  letter-spacing: -.035em;
+  text-wrap: balance;
+}
+.about-page-title em { color: var(--crbf-deep-gold); }
+.about-page .about-portrait {
+  grid-area: portrait;
+  align-self: center;
+  padding: clamp(.55rem, 1vw, .9rem);
+  background: white;
+  border: 1px solid var(--crbf-rule);
+}
+.about-portrait img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+.about-introduction { grid-area: introduction; padding-top: 1.45rem; }
+.about-page .about-copy {
+  font-size: clamp(.97rem, 1.15vw, 1.035rem);
+  line-height: 1.68;
+  color: #44413d;
+}
+.about-copy p + p { margin-top: .75em; }
+.about-page .about-story {
+  display: grid;
+  grid-template-columns: minmax(0,1.07fr) minmax(0,.93fr);
+  align-items: center;
+  column-gap: clamp(2rem,6vw,6rem);
+  padding-block: var(--about-space);
+}
+.about-story h2 {
+  margin-block: .55rem 1rem;
+  font: 500 var(--crbf-section-size)/1.05 var(--about-serif);
+  letter-spacing: -.035em;
+  text-wrap: balance;
+}
+.about-page .about-quote {
+  padding: clamp(1.6rem,3.1vw,3.35rem);
+  background: var(--charcoal);
+  border: 0;
+  text-align: left;
+}
+.about-quote::before {
+  content: "";
+  display: block;
+  width: 3rem;
+  height: 1px;
+  margin-bottom: 1.25rem;
+  background: var(--crbf-metal-light);
+}
+.about-quote p {
+  color: #d6ccb4;
+  font: italic 400 clamp(1.75rem, 2.75vw, 2.55rem)/1.12 var(--about-serif);
+  letter-spacing: -.015em;
+}
+.about-quote .quote-attribution {
+  color: #d6ccb4;
+  font: 500 .79rem/1.55 var(--font-manrope), Arial, sans-serif;
+  margin-top: 1.15rem;
+  max-width: 37ch;
+}
+.about-priorities {
+  padding-block: var(--about-space);
+  border-top: 1px solid var(--crbf-rule);
+  background: var(--crbf-paper);
+}
+.about-priority-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0,1fr));
+  gap: clamp(1.3rem,3.3vw,3.5rem);
+  margin-top: 1.55rem;
+}
+.about-priority-list article {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border-top: 1px solid var(--warm-gold);
+  padding-top: 1rem;
+}
+.about-priority-list h3 {
+  font: 500 clamp(1.6rem,2.4vw,2.05rem)/1.08 var(--about-serif);
+  letter-spacing: -.02em;
+  text-wrap: pretty;
+}
+.about-priority-list p {
+  font-size: .94rem;
+  line-height: 1.65;
+  color: #48453f;
+  margin-block: .65rem 1rem;
+}
+.about-priority-list a {
+  margin-top: auto;
+  color: var(--crbf-deep-gold);
+  font-weight: 650;
+  text-decoration: underline;
+  text-underline-offset: .22em;
+}
+.about-priority-list a:hover, .about-priority-list a:focus-visible { color: var(--charcoal); }
+.about-priorities .button-row { margin-top: clamp(1.8rem,3.3vw,3rem); }
+@media (max-width: 50rem) {
+  .about-intro > .about-wrap {
+    max-width: 37rem;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas: "title" "portrait" "introduction";
+    row-gap: 1.35rem;
+  }
+  .about-intro .about-page-title { font-size: clamp(2.05rem,5.4vw,2.8rem); }
+  .about-introduction { padding: 0; }
+  .about-page .about-story { max-width: 37rem; grid-template-columns: 1fr; row-gap: 1.5rem; }
+  .about-priorities .about-wrap { max-width: 37rem; }
+  .about-priority-list { grid-template-columns: 1fr; }
+  .about-priority-list p { margin-bottom: .6rem; }
+}
